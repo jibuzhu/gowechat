@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/yaotian/gowechat/util"
-	"github.com/yaotian/gowechat/wxcontext"
+	"github.com/jibuzhu/gowechat/util"
+	"github.com/jibuzhu/gowechat/wxcontext"
 )
 
 //MpBase 微信公众平台,基本类

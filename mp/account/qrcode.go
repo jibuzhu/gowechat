@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"net/url"
 
-	"github.com/yaotian/gowechat/mp/base"
-	"github.com/yaotian/gowechat/wxcontext"
+	"github.com/jibuzhu/gowechat/mp/base"
+	"github.com/jibuzhu/gowechat/wxcontext"
 )
 
 const (

@@ -1,8 +1,8 @@
 package gowechat
 
 import (
-	"github.com/yaotian/gowechat/mch/pay"
-	"github.com/yaotian/gowechat/mch/paytool"
+	"github.com/jibuzhu/gowechat/mch/pay"
+	"github.com/jibuzhu/gowechat/mch/paytool"
 )
 
 //MchMgr mch mgt

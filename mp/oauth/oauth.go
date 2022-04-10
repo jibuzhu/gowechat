@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/yaotian/gowechat/util"
-	"github.com/yaotian/gowechat/wxcontext"
+	"github.com/jibuzhu/gowechat/util"
+	"github.com/jibuzhu/gowechat/wxcontext"
 )
 
 const (
