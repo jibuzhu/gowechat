@@ -67,7 +67,7 @@ handler:
 
 
 */
-func (c *PageOAuthHandler) SetFuncAfterGetUserInfo(handler func(user.Info) bool) {
+func (c *PageOAuthHandler) SetFuncAfterGetUserInfo(handler func(oauth.UserInfo) bool) {
 	c.afterGetUserInfoFunc = handler
 }
 
