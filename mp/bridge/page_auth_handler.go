@@ -97,7 +97,7 @@ func (c *PageOAuthHandler) Handle() (err error) {
 		if err != nil {
 			return err
 		}
-		stopNow = c.afterGetUserInfoFunc(*u)
+		stopNow = c.afterGetUserInfoFunc(u)
 		if stopNow {
 			return nil
 		}
