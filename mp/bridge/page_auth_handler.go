@@ -23,7 +23,7 @@ type PageOAuthHandler struct {
 	checkOpenIDExistingFunc func(openID string) (existing bool, stopNow bool)
 
 	user.Info
-	afterGetUserInfoFunc func(user user.Info) (stopNow bool)
+	afterGetUserInfoFunc func(user oauth.UserInfo) (stopNow bool)
 }
 
 //NewPageOAuthHandler PageOAuthHandler初始化
@@ -91,7 +91,9 @@ func (c *PageOAuthHandler) Handle() (err error) {
 			return
 		}
 		//用 user模块的，没用oauth模板，可以获得更多信息
-		u, err := user.NewUser(c.Oauth.Context).GetUserInfo(openID)
+		//2021年以后不能在用用户模块接口获取用户信息了
+		//u, err := user.NewUser(c.Oauth.Context).GetUserInfo(openID)
+		u, err := c.GetUserInfo(acsTkn.AccessToken, acsTkn.OpenID)
 		if err != nil {
 			return err
 		}
