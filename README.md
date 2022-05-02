@@ -12,7 +12,7 @@
     replace github.com/yaotian/gowechat@版本号 => ../github.com/radishqiu/gowechat@版本号
 
 #### Run examples
-    cd ./examples/beego
+    cd ./examples/beego 
     go run beego.go
 
 ## Features
