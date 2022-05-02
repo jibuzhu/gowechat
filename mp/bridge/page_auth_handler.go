@@ -35,7 +35,7 @@ func NewPageOAuthHandler(context *wxcontext.Context, myURLOfPageOAuthCallback st
 }
 
 func (c *PageOAuthHandler) getCallbackURL() (u string) {
-	return fmt.Sprintf("%s?target=%s", c.myURLOfPageOAuthCallback, url.QueryEscape(c.myURLNeedPageOAuth))
+	return url.QueryEscape(fmt.Sprintf("%s?target=%s", c.myURLOfPageOAuthCallback, url.QueryEscape(c.myURLNeedPageOAuth)))
 }
 
 /*SetFuncCheckOpenIDExisting 设置检查OpenID在您的系统中是否已经存在
