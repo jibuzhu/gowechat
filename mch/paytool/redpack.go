@@ -56,6 +56,9 @@ type RedPackInput struct {
 
 	//非必填，但大于200元，此必填, 有8个选项可供选择
 	SceneID string
+
+	//非必填，机构号后缀
+	BillnoSuffix string
 }
 
 //Check check input
@@ -79,9 +82,12 @@ func (c *PayTool) SendRedPack(input RedPackInput) (isSuccess bool, err error) {
 	}
 
 	now := time.Now()
-	dayStr := beego.Date(now, "Ymd")
 
-	billno := c.MchID + dayStr + util.RandomStr(10)
+	if input.BillnoSuffix == "" {
+		dayStr := beego.Date(now, "Ymd")
+		input.BillnoSuffix = dayStr + util.RandomStr(10)
+	}
+	billno := c.MchID + input.BillnoSuffix
 
 	var signMap = make(map[string]string)
 	signMap["nonce_str"] = util.RandomStr(5)
