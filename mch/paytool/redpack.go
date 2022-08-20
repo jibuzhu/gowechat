@@ -102,6 +102,9 @@ func (c *PayTool) SendRedPack(input RedPackInput) (isSuccess bool, err error) {
 	signMap["client_ip"] = input.IP
 	signMap["act_name"] = input.ActName
 	signMap["remark"] = input.Remark
+	if input.SceneID != "" {
+		signMap["scene_id"] = input.SceneID
+	}
 	signMap["sign"] = base.Sign(signMap, c.MchAPIKey, nil)
 
 	respMap, err := c.SendRedPackRaw(signMap)
