@@ -63,6 +63,13 @@ func (srv *MsgHandler) Handle() error {
 		if err != nil {
 			return err
 		}
+
+		// msg为nil, 则认为当次不回复, 告知微信服务器
+		if replyMsg == nil {
+			srv.String("success")
+			return nil
+		}
+
 		//debug
 		// fmt.Println("request msg = ", string(srv.requestRawXMLMsg))
 		err = srv.buildResponse(replyMsg)
